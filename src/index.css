@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-800;
+  }
+}
+
+.leaflet-container {
+  z-index: 10;
+}
+
+.leaflet-routing-container {
+  display: none !important;
+}
+
+/* Custom styling for the route line */
+.leaflet-routing-alt {
+  display: none !important;
+}
+
+.leaflet-routing-container-hide {
+  display: none !important;
+}
