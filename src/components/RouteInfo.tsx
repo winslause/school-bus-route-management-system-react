@@ -1,4 +1,4 @@
-import { Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react'; 
 
 // Define the structure for Route and Bus (add more fields if necessary)
 interface Stop {
@@ -84,9 +84,7 @@ export function RouteInfo({ route }: RouteInfoProps) {
     <div className="bg-white p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-semibold">Route {route.id} Details</h3>
-        <span className={`px-3 py-1 rounded-full text-sm ${
-          route.isReturn ? 'bg-orange-100 text-orange-800' : 'bg-green-100 text-green-800'
-        }`}>
+        <span className={`px-3 py-1 rounded-full text-sm ${route.isReturn ? 'bg-orange-100 text-orange-800' : 'bg-green-100 text-green-800'}`}>
           {route.isReturn ? 'Returning to School' : 'Picking up Students'}
         </span>
       </div>
@@ -99,15 +97,25 @@ export function RouteInfo({ route }: RouteInfoProps) {
 
         <div className="space-y-2">
           <p className="text-sm font-medium text-gray-700">Stops:</p>
-          {route.stops.map((stop, index) => (
-            <div key={stop.id} className="flex items-start gap-2 ml-2">
+          {route.isReturn ? (
+            <div className="flex items-start gap-2 ml-2">
               <MapPin className="w-4 h-4 text-blue-500 mt-1" />
               <div>
-                <p className="text-sm font-medium">{stop.name}</p>
-                <p className="text-xs text-gray-500">ETA: {index * 15 + 10} mins</p>
+                <p className="text-sm font-medium">Direct to School</p>
+                <p className="text-xs text-gray-500">This is the return route to school</p>
               </div>
             </div>
-          ))}
+          ) : (
+            route.stops.map((stop, index) => (
+              <div key={stop.id} className="flex items-start gap-2 ml-2">
+                <MapPin className="w-4 h-4 text-blue-500 mt-1" />
+                <div>
+                  <p className="text-sm font-medium">{stop.name}</p>
+                  <p className="text-xs text-gray-500">ETA: {index * 15 + 10} mins</p>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="mt-4 p-4 bg-gray-50 rounded-lg">

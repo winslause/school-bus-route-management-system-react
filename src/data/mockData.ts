@@ -6,14 +6,14 @@ export const SCHOOL_LOCATION: [number, number] = [-1.22419, 36.9176];
 export const MOCK_DRIVERS: Driver[] = [
   {
     id: '1',
-    name: 'John Doe',
+    name: 'Jacob Kairo',
     phone: '+254 123 456 789',
     license: 'DL123456',
     status: 'available'
   },
   {
     id: '2',
-    name: 'Jane Smith',
+    name: 'Jane',
     phone: '+254 987 654 321',
     license: 'DL789012',
     status: 'available'
@@ -58,7 +58,8 @@ export const MOCK_STOPS_ROUTE1: Stop[] = [
   { id: '7', name: 'Shell - Kihunguro', coordinates: [-1.16029, 36.95833], estimatedTime: '09:40 AM', order: 7 },
   { id: '8', name: 'Kijana Msafi Caterers', coordinates: [-1.19437, 36.94573], estimatedTime: '09:45 AM', order: 8 },
   { id: '9', name: 'Sara kwa booster', coordinates: [-1.20193, 36.94054], estimatedTime: '09:50 AM', order: 9 },
-  { id: '10', name: 'Horeb Ministries Githurai 45', coordinates: [-1.20513, 36.93097], estimatedTime: '09:55 AM', order: 10 }
+  { id: '10', name: 'Horeb Ministries Githurai 45', coordinates: [-1.20513, 36.93097], estimatedTime: '09:55 AM', order: 10 },
+  { id: '11', name: 'Mount Laverna School', coordinates: [-1.22419, 36.9176], estimatedTime: '10:00 AM', order: 11 }
 ];
 
 export const MOCK_STOPS_ROUTE2: Stop[] = [
@@ -70,7 +71,8 @@ export const MOCK_STOPS_ROUTE2: Stop[] = [
   { id: '6', name: 'Wema Flats', coordinates: [-1.223694, 36.922750], estimatedTime: '09:40 AM', order: 6 },
   { id: '7', name: 'Dove Apartments', coordinates: [-1.222750, 36.924944], estimatedTime: '09:45 AM', order: 7 },
   { id: '8', name: 'Zion Temple Kasarani', coordinates: [-1.221111, 36.927861], estimatedTime: '09:50 AM', order: 8 },
-  { id: '9', name: 'Kibukahs Apartments', coordinates: [-1.221417, 36.926611], estimatedTime: '09:55 AM', order: 9 }
+  { id: '9', name: 'Kibukahs Apartments', coordinates: [-1.221417, 36.926611], estimatedTime: '09:55 AM', order: 9 },
+  { id: '10', name: 'Mount Laverna School', coordinates: [-1.22419, 36.9176], estimatedTime: '10:00 AM', order: 10 }
 ];
 
 export const MOCK_STOPS_ROUTE3: Stop[] = [
@@ -86,7 +88,8 @@ export const MOCK_STOPS_ROUTE3: Stop[] = [
   { id: '10', name: 'Vibramatt Supermarket', coordinates: [-1.229361, 36.927194], estimatedTime: '09:55 AM', order: 10 },
   { id: '11', name: 'LPG Gas Authorized Dealer', coordinates: [-1.225778, 36.929000], estimatedTime: '10:00 AM', order: 11 },
   { id: '12', name: '13th Street - Deliverance Road', coordinates: [-1.226167, 36.932833], estimatedTime: '10:05 AM', order: 12 },
-  { id: '13', name: 'Deliverance Church Kasarani Mwiki', coordinates: [-1.233028, 36.930306], estimatedTime: '10:10 AM', order: 13 }
+  { id: '13', name: 'Deliverance Church Kasarani Mwiki', coordinates: [-1.233028, 36.930306], estimatedTime: '10:10 AM', order: 13 },
+  { id: '14', name: 'Mount Laverna School', coordinates: [-1.22419, 36.9176], estimatedTime: '10:15 AM', order: 11 }
 ];
 
 export const MOCK_BUSES: Bus[] = [
@@ -142,7 +145,7 @@ export const MOCK_ROUTES: Route[] = [
     status: 'active',
     schedule: {
       departureTime: '08:00',
-      estimatedArrival: '09:00',
+      estimatedArrival: '09:15',
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] as ('Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday')[]
     }
   },
@@ -155,7 +158,7 @@ export const MOCK_ROUTES: Route[] = [
     status: 'active',
     schedule: {
       departureTime: '08:00',
-      estimatedArrival: '09:00',
+      estimatedArrival: '09:15',
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] as ('Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday')[]
     }
   },
@@ -164,11 +167,11 @@ export const MOCK_ROUTES: Route[] = [
     name: 'Route 3',
     bus: MOCK_BUSES[2],
     stops: MOCK_STOPS_ROUTE3,
-    isReturn: true,
+    isReturn: false,
     status: 'active',
     schedule: {
       departureTime: '08:00',
-      estimatedArrival: '10:00',
+      estimatedArrival: '10:15',
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] as ('Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday')[]
     }
   }
