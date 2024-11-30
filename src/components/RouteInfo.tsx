@@ -27,8 +27,24 @@ interface RouteInfoProps {
   route: Route;
 }
 
-// Dummy data for Route 2 and Route 3
+// Dummy data for Route 1, Route 2, and Route 3 with driver "Wenslause"
 const routes: Route[] = [
+  {
+    id: 1,
+    isReturn: false, // Picking up students
+    stops: [
+      { id: 1, name: 'Main Gate', lat: -1.228000, lon: 36.922000 },
+      { id: 2, name: 'First Stop', lat: -1.229000, lon: 36.923000 },
+      { id: 3, name: 'Second Stop', lat: -1.230000, lon: 36.924000 },
+    ],
+    bus: {
+      number: 'KAJ 1122A',
+      driver: {
+        name: 'Wenslause',
+        phone: '+254712345678',
+      },
+    },
+  },
   {
     id: 2,
     isReturn: false, // Picking up students
@@ -46,7 +62,7 @@ const routes: Route[] = [
     bus: {
       number: 'KAJ 1234B',
       driver: {
-        name: 'John Doe',
+        name: 'Wenslause',
         phone: '+254712345678',
       },
     },
@@ -72,8 +88,8 @@ const routes: Route[] = [
     bus: {
       number: 'KAD 9876F',
       driver: {
-        name: 'Jane Smith',
-        phone: '+254798765432',
+        name: 'Wenslause',
+        phone: '+254712345678',
       },
     },
   },
@@ -131,12 +147,13 @@ export function RouteInfo({ route }: RouteInfoProps) {
   );
 }
 
-// Example usage of RouteInfo component for Route 2 and Route 3
+// Example usage of RouteInfo component for Route 1, Route 2, and Route 3
 export function App() {
   return (
     <div className="space-y-8">
-      <RouteInfo route={routes[0]} /> {/* Route 2 */}
-      <RouteInfo route={routes[1]} /> {/* Route 3 */}
+      <RouteInfo route={routes[0]} /> {/* Route 1 */}
+      <RouteInfo route={routes[1]} /> {/* Route 2 */}
+      <RouteInfo route={routes[2]} /> {/* Route 3 */}
     </div>
   );
 }
