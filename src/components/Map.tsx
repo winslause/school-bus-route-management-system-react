@@ -31,7 +31,7 @@ const ROUTE_COLORS = {
 function createBusIcon(routeId: string) {
   const color = ROUTE_COLORS[routeId as keyof typeof ROUTE_COLORS]?.marker || 'blue';
   return new L.Icon({
-    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+    iconUrl: `https://icones.pro/wp-content/uploads/2022/07/symbole-de-bus-jaune.png`,
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
@@ -42,13 +42,14 @@ function createBusIcon(routeId: string) {
 
 // School and stop icons
 const schoolIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+  iconUrl: 'data:image/png;base64,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', // Replace with an actual school-like icon
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  iconSize: [50, 82], // Increase icon size
+  iconAnchor: [25, 82], // Adjust anchor point based on new size
+  popupAnchor: [1, -55], // Adjust popup position
+  shadowSize: [50, 82] // Increase shadow size to match icon
 });
+
 
 const stopIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
